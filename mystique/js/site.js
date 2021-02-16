@@ -116,8 +116,10 @@ function fillVerticalBar(e, wW, wH) {
         $(e).height($(window).scrollTop() + wH - e.offset().top - 80);
     } else if (($(window).scrollTop() + wH - e.offset().top - 80) > $(e).closest(".bar_wrapper").height()) {
         if ($(e).closest("section").height() - 2 <= wH) {
-            $(e).css("align-self", "flex-end");
-            $(e).height($(e).closest(".bar_wrapper").height() + wH - $(window).scrollTop());
+            setTimeout(() => {
+                $(e).css("align-self", "flex-end");
+                $(e).height($(e).closest(".bar_wrapper").height() + wH - $(window).scrollTop());
+            }, 10);
         } else {
             $(e).height($(e).closest(".bar_wrapper").height());
         }
