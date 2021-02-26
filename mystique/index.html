@@ -4,14 +4,14 @@
 <head>
     <script type="text/javascript">
         /*
-                        var slowLoad = window.setTimeout(function() {
-                        alert("the page is taking its sweet time loading");
-                        }, 1000);
+                                                                                var slowLoad = window.setTimeout(function() {
+                                                                                alert("the page is taking its sweet time loading");
+                                                                                }, 1000);
 
-                        window.addEventListener('load', function() {
-                        window.clearTimeout(slowLoad);
-                        }, false);
-                        */
+                                                                                window.addEventListener('load', function() {
+                                                                                window.clearTimeout(slowLoad);
+                                                                                }, false);
+                                                                                */
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -52,8 +52,14 @@
                 </div>
             </div>
             <div class="pack-content lottie-content">
-                <img class="previewPack" src="content/img/previewPack.jpg" alt="previewPack">
-                <div class="lottie" id="pack"></div>
+                <!-- <img class="previewPack" src="content/img/previewPack.jpg" alt="previewPack">
+                <div class="lottie" id="pack"></div> -->
+
+                <div class="previewPack lottie">
+                    <video id="packVideo" loop muted poster="content/img/previewPack.jpg" style="height: 100%;width: 100%;">
+                        <source src="content/video/pack.mp4" type="video/mp4">
+                      </video>
+                </div>
             </div>
 
             <div class="section-content">
@@ -206,7 +212,7 @@
         </div>
 
         <div class="jar-content lottie-content">
-            <img class="previewJar" src="content/img/previewJar.jpg" alt="previewPack">
+            <img class="previewJar" src="content/img/previewJar.png" alt="previewPack">
             <div class="lottie" id="jar"></div>
         </div>
 

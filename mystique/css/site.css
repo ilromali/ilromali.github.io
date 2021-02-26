@@ -9,6 +9,11 @@
     --second-color-translucent-gradient: rgba(26, 225, 217, 0.9);
 }
 
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 *,
 *::before,
 *::after {

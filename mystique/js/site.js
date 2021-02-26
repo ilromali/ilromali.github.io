@@ -20,7 +20,7 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-const packAnimation = lottie.loadAnimation({
+/*const packAnimation = lottie.loadAnimation({
     container: document.getElementById('pack'),
     renderer: 'svg',
     loop: true,
@@ -37,14 +37,20 @@ packAnimation.addEventListener('data_ready', function() {
         });
     }, 100);
     console.log('pack_ready')
-})
+})*/
 
 const jarAnimation = lottie.loadAnimation({
     container: document.getElementById('jar'),
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    path: 'https://assets4.lottiefiles.com/packages/lf20_edtxpuzu.json'
+    //100% old jar cloud
+    //path: 'https://assets4.lottiefiles.com/packages/lf20_edtxpuzu.json'
+
+    //60% new jar cloud
+    path: 'https://assets1.lottiefiles.com/packages/lf20_jlvnqo9x.json'
+        //60% new jar local
+        //path: 'content/json/jar-100to60.json'
 });
 
 function animateJar(duration, animObject) {
@@ -115,6 +121,9 @@ function startLetterAnim(e) {
 }
 
 $(document).ready(function() {
+    setTimeout(() => {
+        document.getElementById('packVideo').play();
+    }, 200);
     var elems = document.querySelectorAll('.ml12');
     var textWrapper = elems;
     for (let j = 0; j < textWrapper.length; j++) {
