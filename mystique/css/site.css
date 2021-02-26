@@ -610,6 +610,7 @@ section.secondScreen .section-content .section-content_rightPart {
     width: 310px;
     height: max-content;
     margin-right: auto;
+    width: min-content;
 }
 
 .thirdScreen {
@@ -997,16 +998,68 @@ form button:hover {
         font-size: 37px;
         line-height: 45px;
     }
-    .section-content p {
-        font-size: 22px;
-        line-height: 30px;
+    .section-content {
+        max-width: 760px;
     }
-    .columns>div {
-        width: 150px;
-        margin-right: 60px;
+    .grid-line.leftLine {
+        left: calc(100% / 2 - 380px);
     }
-    .columns>div>img {
-        margin-bottom: 60px;
+    .grid-line.rightLine {
+        right: calc(100% / 2 - 380px);
+    }
+    .grid-line.leftObliqueLine {
+        left: calc(100% / 2 - 380px);
+    }
+    .grid-line.righObliquetLine {
+        right: calc(100% / 2 - 380px);
+    }
+    .pack-content {
+        position: absolute;
+        left: calc(100% / 2 - 380px);
+    }
+    .fixedLogo_wrapper {
+        width: calc(100% / 2 - 380px);
+    }
+    .previewLogo_wrapper {
+        width: calc(100% / 2 - 380px);
+    }
+    .section-content_leftPart {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .section-content_rightPart {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .blurBg-contentWrapper {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .blurSectionContent_right {
+        padding-left: 55px;
+    }
+    #form .section-content {
+        padding-left: 55px;
+        padding-right: 55px;
+    }
+    .fourthScreen .section-content h1 {
+        margin-left: 55px;
+        margin-right: 55px;
+    }
+    .characteristic1 {
+        left: calc(100% / 2 + 355px);
+    }
+    .characteristic2 {
+        left: calc(100% / 2 + 134px);
+    }
+    .characteristic3 {
+        right: calc(100% / 2 + 355px);
+    }
+    .characteristics_item-right>span {
+        right: calc(100% + 28px);
+    }
+    .characteristics_item-left>span {
+        left: calc(100% + 28px);
     }
 }
 
@@ -1017,11 +1070,104 @@ form button:hover {
         line-height: 42px;
     }
     .section-content p {
-        font-size: 20px;
+        font-size: 22px;
         line-height: 28px;
+    }
+    .columns>div {
+        width: 150px;
+        margin-right: 60px;
+    }
+    .columns>div>img {
+        margin-bottom: 60px;
     }
     .thirdScreen {
         height: 525px;
+    }
+    .secondScreen {
+        display: flex;
+    }
+    .previewLogo_wrapper {
+        right: 0px;
+        width: 100%;
+        z-index: 1;
+    }
+    .previewLogo_wrapper .previewLogo {
+        margin-top: 32px;
+    }
+    .fixedLogo_wrapper {
+        width: 100%;
+    }
+    .fixedLogo_wrapper .fixedLogo {
+        margin-top: 32px;
+    }
+    .grid-line.middleLine,
+    .grid-line.leftObliqueLine,
+    .grid-line.righObliquetLine {
+        display: none;
+    }
+    .grid-line.topLine {
+        top: 16px;
+    }
+    .grid-line.bottomLine {
+        bottom: 16px;
+    }
+    .grid-line.leftLine {
+        left: 16px;
+    }
+    .grid-line.rightLine {
+        right: 16px;
+    }
+    .bar_wrapper {
+        margin-bottom: 16px;
+    }
+    .section-content {
+        max-width: 100%;
+        padding: 96px 16px;
+    }
+    #form .section-content {
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+    section.secondScreen .section-content h1:first-child {
+        margin-top: 44px;
+    }
+    .fourthScreen .section-content h1 {
+        margin-top: 44px;
+    }
+    .blurBg-contentWrapper {
+        padding-top: 44px;
+    }
+    .form_content {
+        margin-top: 44px;
+    }
+    section.secondScreen .section-content .section-content_rightPart {
+        padding-top: 44px;
+        padding-bottom: 44px;
+    }
+    .characteristic1 {
+        left: unset;
+        width: 32px;
+    }
+    .characteristic2 {
+        left: unset;
+        width: 95px;
+    }
+    .characteristic3 {
+        right: unset;
+        width: 32px;
+    }
+    .characteristics_item>span {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    .stage_item__index1 {
+        right: calc(100% + 37px);
+    }
+    .stage_item__index2 {
+        right: calc(100% + 31px);
+    }
+    .stage_item__index3 {
+        right: calc(100% + 32px);
     }
 }
 
@@ -1032,18 +1178,54 @@ form button:hover {
         line-height: 39px;
     }
     .section-content p {
-        font-size: 18px;
+        font-size: 20px;
         line-height: 26px;
-    }
-    .columns>div {
-        width: 100px;
-        margin-right: 40px;
-    }
-    .columns>div>img {
-        margin-bottom: 40px;
     }
     .thirdScreen {
         height: 450px;
+    }
+    .section-content_leftPart {
+        padding-left: 31px;
+        padding-right: 31px;
+    }
+    .section-content_rightPart {
+        padding-left: 31px;
+        padding-right: 31px;
+    }
+    .blurBg-contentWrapper {
+        padding-left: 31px;
+        padding-right: 31px;
+    }
+    .blurSectionContent_right {
+        padding-left: 31px;
+    }
+    #form .section-content {
+        padding-left: 48px;
+        padding-right: 48px;
+    }
+    .fourthScreen .section-content h1 {
+        margin-left: 31px;
+        margin-right: 31px;
+    }
+    section.secondScreen .section-content h1:first-child {
+        margin-top: 21px;
+    }
+    .fourthScreen .section-content h1 {
+        margin-top: 21px;
+    }
+    .blurBg-contentWrapper {
+        padding-top: 21px;
+    }
+    .form_content {
+        margin-top: 21px;
+    }
+    section.secondScreen .section-content .section-content_rightPart {
+        padding-top: 21px;
+        padding-bottom: 21px;
+    }
+    .characteristics_item>span {
+        font-size: 32px;
+        line-height: 40px;
     }
 }
 
@@ -1054,10 +1236,99 @@ form button:hover {
         line-height: 36px;
     }
     .section-content p {
-        font-size: 16px;
+        font-size: 18px;
         line-height: 24px;
+    }
+    .columns>div {
+        width: 100px;
+        margin-right: 40px;
+    }
+    .columns>div>img {
+        margin-bottom: 40px;
     }
     .thirdScreen {
         height: 375px;
+    }
+    .characteristics_item-right>span {
+        right: calc(100% + 16px);
+    }
+    .characteristics_item-left>span {
+        left: calc(100% + 16px);
+    }
+    .characteristics_item>span {
+        font-size: 28px;
+        line-height: 36px;
+    }
+}
+
+@media (max-height: 730px) {
+    .pack-content {
+        top: calc(100% / 2 - 270px);
+        bottom: calc(100% / 2 - 270px);
+        max-height: 540px;
+    }
+    .bg-compoundGradient_top,
+    .bg-compoundGradient_bottom {
+        min-height: calc(100% / 2 - 270px);
+    }
+}
+
+@media (max-height: 680px) {
+    .pack-content {
+        top: calc(100% / 2 - 245px);
+        bottom: calc(100% / 2 - 245px);
+        max-height: 490px;
+    }
+    .bg-compoundGradient_top,
+    .bg-compoundGradient_bottom {
+        min-height: calc(100% / 2 - 245px);
+    }
+}
+
+@media (max-height: 630px) {
+    .pack-content {
+        top: calc(100% / 2 - 220px);
+        bottom: calc(100% / 2 - 220px);
+        max-height: 440px;
+    }
+    .bg-compoundGradient_top,
+    .bg-compoundGradient_bottom {
+        min-height: calc(100% / 2 - 220px);
+    }
+}
+
+@media (max-height: 580px) {
+    .pack-content {
+        top: calc(100% / 2 - 195px);
+        bottom: calc(100% / 2 - 195px);
+        max-height: 390px;
+    }
+    .bg-compoundGradient_top,
+    .bg-compoundGradient_bottom {
+        min-height: calc(100% / 2 - 195px);
+    }
+}
+
+@media (max-height: 530px) {
+    .pack-content {
+        top: calc(100% / 2 - 170px);
+        bottom: calc(100% / 2 - 170px);
+        max-height: 340px;
+    }
+    .bg-compoundGradient_top,
+    .bg-compoundGradient_bottom {
+        min-height: calc(100% / 2 - 170px);
+    }
+}
+
+@media (max-height: 480px) {
+    .pack-content {
+        top: calc(100% / 2 - 145px);
+        bottom: calc(100% / 2 - 145px);
+        max-height: 290px;
+    }
+    .bg-compoundGradient_top,
+    .bg-compoundGradient_bottom {
+        min-height: calc(100% / 2 - 145px);
     }
 }

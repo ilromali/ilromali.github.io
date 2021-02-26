@@ -150,7 +150,13 @@ $(document).ready(function() {
     var bar = document.getElementById("gradientBar");
 
     adaptСontent(windowWidth, windowHeight);
-    bar.closest(".bar_wrapper").style.height = bar.closest(".section-content").clientHeight - 160 + "px";
+
+    var currBarPadding = 160;
+    if (windowWidth >= 768 && windowWidth < 992) {
+        currBarPadding = 96;
+    }
+
+    bar.closest(".bar_wrapper").style.height = bar.closest(".section-content").clientHeight - currBarPadding + "px";
 
     fixLogo(vh * 100)
     fillVerticalBar(bar, windowWidth, vh * 100);
@@ -202,7 +208,11 @@ $(document).ready(function() {
         document.documentElement.style.setProperty('--vh', `${vh}px`);
 
         adaptСontent(windowWidth, windowHeight);
-        bar.closest(".bar_wrapper").style.height = bar.closest(".section-content").clientHeight - 160 + "px";
+
+        if (windowWidth >= 768 && windowWidth < 992) {
+            currBarPadding = 96;
+        }
+        bar.closest(".bar_wrapper").style.height = bar.closest(".section-content").clientHeight - currBarPadding + "px";
 
         fixLogo(vh * 100)
         fillVerticalBar(bar, windowWidth, vh * 100);
@@ -215,7 +225,7 @@ $(document).ready(function() {
     });
 });
 
-async function fillVerticalBar(e, wW, wH) {
+function fillVerticalBar(e, wW, wH) {
     var scrollFromTop = window.pageYOffset;
     var newHeightBar = scrollFromTop - 160;
     var heightBarWrapper = e.closest(".bar_wrapper").clientHeight;
