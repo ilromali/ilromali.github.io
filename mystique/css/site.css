@@ -160,6 +160,10 @@ section.firstScreen {
     transition: 0.2s;
 }
 
+section.firstScreen h1>span>span {
+    opacity: 0;
+}
+
 section.firstScreen .section-content p {
     margin-top: 45px;
 }

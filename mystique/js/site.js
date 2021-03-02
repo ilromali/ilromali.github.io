@@ -1,3 +1,43 @@
+function startLetterAnim(e) {
+    anime.timeline({
+            loop: false
+        })
+        .add({
+            targets: e.children,
+            translateX: [40, 0],
+            translateZ: 0,
+            opacity: [0, 1],
+            easing: "easeOutExpo",
+            duration: 1100,
+            delay: (el, i) => 30 * i
+        });
+}
+
+function startTitleAnimate() {
+    var elems = document.querySelectorAll('.ml12');
+    var textWrapper = elems;
+    for (let j = 0; j < textWrapper.length; j++) {
+        textWrapper[j].innerHTML = textWrapper[j].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+    var elem1 = document.querySelector(".byLetter1");
+    var elem2 = document.querySelector(".byLetter2");
+    var elem3 = document.querySelector(".byLetter3");
+    var elem4 = document.querySelector(".byLetter4");
+    window.setTimeout(() => {
+        startLetterAnim(elem1);
+    }, 150);
+    window.setTimeout(() => {
+        startLetterAnim(elem2);
+    }, 450);
+    window.setTimeout(() => {
+        startLetterAnim(elem3);
+    }, 750);
+    window.setTimeout(() => {
+        startLetterAnim(elem4);
+    }, 1050);
+}
+startTitleAnimate();
+
 AOS.init({
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -113,42 +153,6 @@ function debounce(func, wait, immediate) {
     };
 };
 
-function startLetterAnim(e) {
-    anime.timeline({ loop: false })
-        .add({
-            targets: e.children,
-            translateX: [40, 0],
-            translateZ: 0,
-            opacity: [0, 1],
-            easing: "easeOutExpo",
-            duration: 1500,
-            delay: (el, i) => 30 * i
-        });
-}
-
-function startTitleAnimate() {
-    var elems = document.querySelectorAll('.ml12');
-    var textWrapper = elems;
-    for (let j = 0; j < textWrapper.length; j++) {
-        textWrapper[j].innerHTML = textWrapper[j].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    }
-    var elem1 = document.querySelector(".byLetter1");
-    var elem2 = document.querySelector(".byLetter2");
-    var elem3 = document.querySelector(".byLetter3");
-    var elem4 = document.querySelector(".byLetter4");
-    window.setTimeout(() => {
-        startLetterAnim(elem1);
-    }, 150);
-    window.setTimeout(() => {
-        startLetterAnim(elem2);
-    }, 650);
-    window.setTimeout(() => {
-        startLetterAnim(elem3);
-    }, 1150);
-    window.setTimeout(() => {
-        startLetterAnim(elem4);
-    }, 1650);
-}
 
 $(document).ready(function() {
     /*setTimeout(() => {
@@ -344,5 +348,3 @@ function adjustContentSize() {
         }
     }
 })();
-
-startTitleAnimate();
