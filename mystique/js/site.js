@@ -20,12 +20,17 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-/*const packAnimation = lottie.loadAnimation({
+var rellax = new Rellax('.rellax');
+
+const packAnimation = lottie.loadAnimation({
     container: document.getElementById('pack'),
     renderer: 'svg',
     loop: true,
     autoplay: true,
+    //100% pack local
     //path: 'content/json/pack.json'
+
+    //100% pack cloud
     path: 'https://assets10.lottiefiles.com/packages/lf20_utbxmit0.json'
 });
 
@@ -37,7 +42,7 @@ packAnimation.addEventListener('data_ready', function() {
         });
     }, 100);
     console.log('pack_ready')
-})*/
+})
 
 const jarAnimation = lottie.loadAnimation({
     container: document.getElementById('jar'),
@@ -49,12 +54,13 @@ const jarAnimation = lottie.loadAnimation({
 
     //60% new jar cloud
     path: 'https://assets1.lottiefiles.com/packages/lf20_jlvnqo9x.json'
-        //60% new jar local
-        //path: 'content/json/jar-100to60.json'
+
+    //60% new jar local
+    //path: 'content/json/jar-100to60.json'
 });
 
 function animateJar(duration, animObject) {
-    var scrollPosition = $(window).scrollTop() - currentOffsetTop(jarAnimation.wrapper)[0] + duration - jarAnimation.wrapper.offsetHeight * 0.6;
+    var scrollPosition = $(window).scrollTop() - currentOffsetTop(jarAnimation.wrapper)[0] + duration + jarAnimation.wrapper.offsetHeight * 0.1;
     var maxFrames = animObject.totalFrames;
     var frame = (maxFrames / 100) * (scrollPosition / (duration / 100));
     if (frame < 0) {
@@ -120,10 +126,7 @@ function startLetterAnim(e) {
         });
 }
 
-$(document).ready(function() {
-    setTimeout(() => {
-        document.getElementById('packVideo').play();
-    }, 200);
+function startTitleAnimate() {
     var elems = document.querySelectorAll('.ml12');
     var textWrapper = elems;
     for (let j = 0; j < textWrapper.length; j++) {
@@ -145,6 +148,13 @@ $(document).ready(function() {
     window.setTimeout(() => {
         startLetterAnim(elem4);
     }, 1650);
+}
+
+$(document).ready(function() {
+    /*setTimeout(() => {
+        document.getElementById('packVideo').play();
+    }, 200);*/
+    setTimeout(() => {}, 200);
 
     $('.fixedLogo_wrapper').midnight();
 
@@ -161,13 +171,15 @@ $(document).ready(function() {
     adaptСontent(windowWidth, windowHeight);
 
     var currBarPadding = 160;
-    if (windowWidth >= 768 && windowWidth < 992) {
+    if (windowWidth >= 576 && windowWidth < 992) {
         currBarPadding = 96;
+    } else if (windowWidth < 576) {
+        currBarPadding = 32;
     }
 
     bar.closest(".bar_wrapper").style.height = bar.closest(".section-content").clientHeight - currBarPadding + "px";
 
-    fixLogo(vh * 100)
+    fixLogo(vh * 100, windowWidth)
     fillVerticalBar(bar, windowWidth, vh * 100);
 
     const form = document.querySelector('form');
@@ -218,25 +230,33 @@ $(document).ready(function() {
 
         adaptСontent(windowWidth, windowHeight);
 
-        if (windowWidth >= 768 && windowWidth < 992) {
+        if (windowWidth >= 576 && windowWidth < 992) {
             currBarPadding = 96;
+        } else if (windowWidth < 576) {
+            currBarPadding = 32;
         }
         bar.closest(".bar_wrapper").style.height = bar.closest(".section-content").clientHeight - currBarPadding + "px";
 
-        fixLogo(vh * 100)
+        fixLogo(vh * 100, windowWidth)
         fillVerticalBar(bar, windowWidth, vh * 100);
-        animateJar(animDuration, jarAnimation);
+        animateJar(animDuration / 2, jarAnimation);
     }
     window.addEventListener('scroll', function(e) {
-        fixLogo(vh * 100)
+        fixLogo(vh * 100, windowWidth)
         fillVerticalBar(bar, windowWidth, vh * 100);
-        animateJar(animDuration, jarAnimation);
+        animateJar(animDuration / 2, jarAnimation);
     });
 });
 
 function fillVerticalBar(e, wW, wH) {
+    var currBarPadding = 160;
+    if (wW >= 576 && wW < 992) {
+        currBarPadding = 96;
+    } else if (wW < 576) {
+        currBarPadding = 32;
+    }
     var scrollFromTop = window.pageYOffset;
-    var newHeightBar = scrollFromTop - 160;
+    var newHeightBar = scrollFromTop - currBarPadding;
     var heightBarWrapper = e.closest(".bar_wrapper").clientHeight;
     var newReturnHeightBar = heightBarWrapper + wH - scrollFromTop;
     var parentSectionHeight = e.closest("section").clientHeight;
@@ -259,14 +279,34 @@ function fillVerticalBar(e, wW, wH) {
     }
 }
 
-function fixLogo(wH) {
-    if ($(window).scrollTop() > wH) {
+function fixLogo(wH, wW) {
+    var scrollTop = $(window).scrollTop();
+    if (scrollTop > wH) {
         $(".fixedLogo_wrapper").css("opacity", "1");
         $(".previewLogo_wrapper").css("opacity", "0");
     } else {
         $(".fixedLogo_wrapper").css("opacity", "0");
         $(".previewLogo_wrapper").css("opacity", "1");
     }
+
+    if (wW >= 576) {
+        var marginsTopBottom = 80;
+        var heightContentSecondScr = $(".secondScreen .section-content_leftPart").height();
+        var heightH1SecondScr = $(".secondScreen h1").height();
+        console.log(heightH1SecondScr);
+
+        if (scrollTop <= wH + marginsTopBottom) {
+            $(".secondScreen h1").css("position", "static");
+            $(".secondScreen h1").css("top", "0");
+        } else if (scrollTop > wH + marginsTopBottom && scrollTop <= wH + heightContentSecondScr - heightH1SecondScr) {
+            $(".secondScreen h1").css("position", "fixed");
+            $(".secondScreen h1").css("top", "0");
+        } else if (scrollTop > wH + heightContentSecondScr - heightH1SecondScr) {
+            $(".secondScreen h1").css("position", "absolute");
+            $(".secondScreen h1").css("top", heightContentSecondScr - heightH1SecondScr);
+        }
+    }
+
 }
 
 function adaptСontent(wW, wH) {
@@ -304,3 +344,5 @@ function adjustContentSize() {
         }
     }
 })();
+
+startTitleAnimate();

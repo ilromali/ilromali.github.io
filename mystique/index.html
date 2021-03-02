@@ -4,14 +4,14 @@
 <head>
     <script type="text/javascript">
         /*
-                                                                                var slowLoad = window.setTimeout(function() {
-                                                                                alert("the page is taking its sweet time loading");
-                                                                                }, 1000);
+                                                                                                                                                                                                                var slowLoad = window.setTimeout(function() {
+                                                                                                                                                                                                                alert("the page is taking its sweet time loading");
+                                                                                                                                                                                                                }, 1000);
 
-                                                                                window.addEventListener('load', function() {
-                                                                                window.clearTimeout(slowLoad);
-                                                                                }, false);
-                                                                                */
+                                                                                                                                                                                                                window.addEventListener('load', function() {
+                                                                                                                                                                                                                window.clearTimeout(slowLoad);
+                                                                                                                                                                                                                }, false);
+                                                                                                                                                                                                                */
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="css/site.css">
     <link rel="stylesheet" href="fonts/Branding_SF/stylesheet.css">
     <link href="css/aos.css" rel="stylesheet">
+    <script src="js/aos.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.6/lottie.min.js" integrity="sha512-BB7rb8ZBAxtdJdB7nwDijJH9NC+648xSzviK9Itm+5APTtdpgKz1+82bDl4znz/FBhd0R7pJ/gQtomnMpZYzRw==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
@@ -28,7 +29,7 @@
     <!-- <script src="js/anime.min.js"></script> -->
     <script src="js/midnight.jquery.min.js"></script>
     <script src="js/smooth-scroll.js"></script>
-    <script src="js/aos.js"></script>
+    <script src="js/rellax.min.js"></script>
 </head>
 
 <body>
@@ -52,14 +53,14 @@
                 </div>
             </div>
             <div class="pack-content lottie-content">
-                <!-- <img class="previewPack" src="content/img/previewPack.jpg" alt="previewPack">
-                <div class="lottie" id="pack"></div> -->
+                <img class="previewPack" src="content/img/previewPack.jpg" alt="previewPack">
+                <div class="lottie" id="pack"></div>
 
-                <div class="previewPack lottie">
+                <!-- <div class="previewPack lottie">
                     <video id="packVideo" loop muted poster="content/img/previewPack.jpg" style="height: 100%;width: 100%;">
                         <source src="content/video/pack.mp4" type="video/mp4">
                       </video>
-                </div>
+                </div> -->
             </div>
 
             <div class="section-content">
@@ -70,8 +71,8 @@
                         <span data-aos="fade-in" class="ml12 byLetter3">evolution </span>
                         <span data-aos="fade-in" class="ml12 byLetter4">of cannabis</span>
                     </h1>
-                    <p data-aos="fade-up" data-aos-delay="2150">Mystique provides mental clarity and unique positive effects for body and mind</p>
-                    <a data-aos="fade-up" data-aos-delay="2350" class="linkButton border-gradient" href="#form">Join the club</a>
+                    <p data-aos="fade-up" data-aos-delay="2350">Mystique provides mental clarity and unique positive effects for body and mind</p>
+                    <a data-aos="fade-up" data-aos-delay="2550" data-aos-offset="0" class="linkButton border-gradient" href="#form">Join the club</a>
                 </div>
             </div>
         </div>
@@ -217,9 +218,9 @@
         </div>
 
         <div class="characteristics">
-            <div data-aos="fade-left" data-aos-delay="100" class="characteristics_item characteristics_item-right characteristic1"><span>clean</span></div>
-            <div data-aos="fade-left" data-aos-delay="200" class="characteristics_item characteristics_item-right characteristic2"><span>light</span></div>
-            <div data-aos="fade-right" data-aos-delay="300" class="characteristics_item characteristics_item-left characteristic3"><span>clear</span></div>
+            <div class="characteristics_item characteristics_item-right characteristic1 rellax" data-rellax-speed="1"><span class="rellax" data-rellax-speed="1">clean</span></div>
+            <div class="characteristics_item characteristics_item-right characteristic2 rellax" data-rellax-speed="1"><span class="rellax" data-rellax-speed="1">light</span></div>
+            <div class="characteristics_item characteristics_item-left characteristic3 rellax" data-rellax-speed="1"><span class="rellax" data-rellax-speed="1">clear</span></div>
         </div>
 
         <div class="section-content">
@@ -365,7 +366,7 @@
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
             </div>
-            <div class="pattern_item patternMoveRight">
+            <div class="pattern_item patternMoveRight onlyDesktop">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
@@ -379,7 +380,7 @@
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
             </div>
-            <div class="pattern_item patternMoveLeft">
+            <div class="pattern_item patternMoveLeft onlyDesktop">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
@@ -392,34 +393,7 @@
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
             </div>
-            <div class="pattern_item patternMoveRight">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
-            </div>
-            <div class="pattern_item patternMoveLeft">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
-            </div>
-            <div class="pattern_item patternMoveRight">
+            <div class="pattern_item patternMoveRight onlyDesktop">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
@@ -433,7 +407,7 @@
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
             </div>
-            <div class="pattern_item patternMoveLeft">
+            <div class="pattern_item patternMoveLeft onlyDesktop">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
@@ -446,7 +420,7 @@
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
             </div>
-            <div class="pattern_item patternMoveRight">
+            <div class="pattern_item patternMoveRight onlyDesktop">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
@@ -460,7 +434,34 @@
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
                 <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
             </div>
-            <div class="pattern_item patternMoveLeft">
+            <div class="pattern_item patternMoveLeft onlyDesktop">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+                <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
+            </div>
+            <div class="pattern_item patternMoveRight onlyDesktop">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+                <img src="content/img/patternOutlined.svg" alt="MYSTIQUE">
+            </div>
+            <div class="pattern_item patternMoveLeft onlyDesktop">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
                 <img src="content/img/patternFilled.svg" alt="MYSTIQUE">
@@ -478,7 +479,7 @@
         <div class="section-content">
             <div class="blurBg-contentWrapper">
                 <h1>
-                    <span data-aos="fade-up">Building </span>
+                    <span data-aos="fade-up" style="width: 100%">Building </span> <br>
                     <span data-aos="fade-up" data-aos-delay="50">a true </span>
                     <span data-aos="fade-up" data-aos-delay="100">community. </span>
                     <span data-aos="fade-up" data-aos-delay="150">developing </span>
