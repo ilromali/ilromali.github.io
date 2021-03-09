@@ -8,34 +8,12 @@ function startLetterAnim(e) {
             translateZ: 0,
             opacity: [0, 1],
             easing: "easeOutExpo",
-            duration: 1100,
+            duration: 1200,
             delay: (el, i) => 30 * i
         });
 }
 
-function startTitleAnimate() {
-    var elems = document.querySelectorAll('.ml12');
-    var textWrapper = elems;
-    for (let j = 0; j < textWrapper.length; j++) {
-        textWrapper[j].innerHTML = textWrapper[j].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
-    }
-    var elem1 = document.querySelector(".byLetter1");
-    var elem2 = document.querySelector(".byLetter2");
-    var elem3 = document.querySelector(".byLetter3");
-    var elem4 = document.querySelector(".byLetter4");
-    window.setTimeout(() => {
-        startLetterAnim(elem1);
-    }, 150);
-    window.setTimeout(() => {
-        startLetterAnim(elem2);
-    }, 450);
-    window.setTimeout(() => {
-        startLetterAnim(elem3);
-    }, 750);
-    window.setTimeout(() => {
-        startLetterAnim(elem4);
-    }, 1050);
-}
+function startTitleAnimate() {}
 startTitleAnimate();
 
 AOS.init({
@@ -60,7 +38,16 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-var rellax = new Rellax('.rellax');
+if (document.documentElement.clientWidth >= 0) {
+    var rellax = new Rellax('.rellax');
+} else {
+    /*  
+        document.querySelector(".characteristic1").setAttribute("data-aos", "fade-left");
+        document.querySelector(".characteristic2").setAttribute("data-aos", "fade-left");
+        document.querySelector(".characteristic3").setAttribute("data-aos", "fade-right");  
+    */
+}
+
 
 const packAnimation = lottie.loadAnimation({
     container: document.getElementById('pack'),
@@ -75,13 +62,50 @@ const packAnimation = lottie.loadAnimation({
 });
 
 packAnimation.addEventListener('data_ready', function() {
+    var firstGrid = document.querySelector('.firstScreen .section-grid');
+    var firstPack = document.querySelector('.firstScreen .lottie');
+    firstPack.style.opacity = "1";
     setTimeout(() => {
         var previewPacks = $(".previewPack");
+        firstGrid.style.opacity = "0.3";
         $(previewPacks).each(function(index) {
             $(this).css("opacity", "0")
         });
     }, 100);
     console.log('pack_ready')
+
+    var elems = document.querySelectorAll('.ml12');
+    var textWrapper = elems;
+    for (let j = 0; j < textWrapper.length; j++) {
+        textWrapper[j].innerHTML = textWrapper[j].textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+    }
+    var elem1 = document.querySelector(".byLetter1");
+    var elem2 = document.querySelector(".byLetter2");
+    var elem3 = document.querySelector(".byLetter3");
+    var elem4 = document.querySelector(".byLetter4");
+    window.setTimeout(() => {
+        startLetterAnim(elem1);
+    }, 150);
+    window.setTimeout(() => {
+        startLetterAnim(elem2);
+    }, 850);
+    window.setTimeout(() => {
+        startLetterAnim(elem3);
+    }, 1150);
+    window.setTimeout(() => {
+        startLetterAnim(elem4);
+    }, 1450);
+
+    var elemFirstHed = document.querySelector(".firstScreen h1");
+    elemFirstHed.classList.add("animate");
+    var elemFirstPar = document.querySelector(".firstScreen p");
+    elemFirstPar.classList.add("animate");
+    var elemFirstBut = document.querySelector(".firstScreen .linkButton");
+    elemFirstBut.classList.add("animate");
+
+    window.setTimeout(() => {
+        elemFirstBut.style.transitionDelay = "0s";;
+    }, 1400);
 })
 
 const jarAnimation = lottie.loadAnimation({
