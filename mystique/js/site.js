@@ -13,9 +13,6 @@ function startLetterAnim(e) {
         });
 }
 
-function startTitleAnimate() {}
-startTitleAnimate();
-
 AOS.init({
     // Global settings:
     disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
@@ -38,16 +35,7 @@ AOS.init({
     anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 });
 
-if (document.documentElement.clientWidth >= 0) {
-    var rellax = new Rellax('.rellax');
-} else {
-    /*  
-        document.querySelector(".characteristic1").setAttribute("data-aos", "fade-left");
-        document.querySelector(".characteristic2").setAttribute("data-aos", "fade-left");
-        document.querySelector(".characteristic3").setAttribute("data-aos", "fade-right");  
-    */
-}
-
+var rellax = new Rellax('.rellax');
 
 const packAnimation = lottie.loadAnimation({
     container: document.getElementById('pack'),
@@ -113,13 +101,10 @@ const jarAnimation = lottie.loadAnimation({
     renderer: 'svg',
     loop: false,
     autoplay: false,
-    //100% old jar cloud
-    //path: 'https://assets4.lottiefiles.com/packages/lf20_edtxpuzu.json'
-
-    //60% new jar cloud
+    //60% jar cloud
     path: 'https://assets1.lottiefiles.com/packages/lf20_jlvnqo9x.json'
 
-    //60% new jar local
+    //60% jar local
     //path: 'content/json/jar-100to60.json'
 });
 
@@ -179,11 +164,6 @@ function debounce(func, wait, immediate) {
 
 
 $(document).ready(function() {
-    /*setTimeout(() => {
-        document.getElementById('packVideo').play();
-    }, 200);*/
-    setTimeout(() => {}, 200);
-
     $('.fixedLogo_wrapper').midnight();
 
     var vh = window.innerHeight * 0.01;
@@ -196,10 +176,8 @@ $(document).ready(function() {
 
     var bar = document.getElementById("gradientBar");
 
-    adaptСontent(windowWidth, windowHeight);
-
     var currBarPadding = 160;
-    if (windowWidth >= 576 && windowWidth < 992) {
+    if (windowWidth >= 576 && windowWidth < 768) {
         currBarPadding = 96;
     } else if (windowWidth < 576) {
         currBarPadding = 32;
@@ -256,9 +234,7 @@ $(document).ready(function() {
         animDuration = vh * 100;
         document.documentElement.style.setProperty('--vh', `${vh}px`);
 
-        adaptСontent(windowWidth, windowHeight);
-
-        if (windowWidth >= 576 && windowWidth < 992) {
+        if (windowWidth >= 576 && windowWidth < 768) {
             currBarPadding = 96;
         } else if (windowWidth < 576) {
             currBarPadding = 32;
@@ -278,7 +254,7 @@ $(document).ready(function() {
 
 function fillVerticalBar(e, wW, wH) {
     var currBarPadding = 160;
-    if (wW >= 576 && wW < 992) {
+    if (wW >= 576 && wW < 768) {
         currBarPadding = 96;
     } else if (wW < 576) {
         currBarPadding = 32;
@@ -333,30 +309,6 @@ function fixLogo(wH, wW) {
             $(".secondScreen h1").css("position", "absolute");
             $(".secondScreen h1").css("top", heightContentSecondScr - heightH1SecondScr);
         }
-    }
-
-}
-
-function adaptСontent(wW, wH) {
-    var isPackHit = (wW / wH) < 1.3 ? true : false;
-    if ( /*!isPackHit*/ wW > 960) {
-
-        /*if (!(wW >= 1439 && wW <= 1441)) {*/
-        //adjustContentSize();
-        /*}*/
-    } else {
-
-    }
-}
-
-function adjustContentSize() {
-    var zoomLevel = ((screen.width) / (window.innerWidth));
-    var inverseZoom = ((window.innerWidth) / (screen.width));
-    var elements = document.getElementsByClassName("zoomableContent");
-    for (i = 0; i < elements.length; i++) {
-        elements[i].style.top = (((window.pageYOffset) + 0) * zoomLevel).toString() + "px";
-        elements[i].style.paddingLeft = ((((window.pageXOffset) + 0) * zoomLevel).toString()) + "px";
-        elements[i].style.zoom = inverseZoom;
     }
 }
 
