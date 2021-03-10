@@ -167,7 +167,6 @@ $(document).ready(function() {
     $('.fixedLogo_wrapper').midnight();
 
     var vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty('--vh', `${vh}px`);
 
     var windowWidth = document.documentElement.clientWidth;
     var windowHeight = window.innerHeight;
