@@ -643,6 +643,9 @@ section.secondScreen .section-content .section-content_rightPart {
     -webkit-transition: 0s;
     -o-transition: 0s;
     transition: 0s;
+}
+
+.previewLogo_wrapper img {
     cursor: pointer;
 }
 
